@@ -1,0 +1,20 @@
+name: Echo
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  echo-variable:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Echo Secret Variable
+        run: echo "The secret is: $REPO_SECRET"
+        run: echo "The variable is: $REPO_VAR"
+        env:
+          REPO_SECRET: ${{ secrets.REPO_SECRET }}
+          REPO_VAR: ${{ secrets.REPO_VAR }}
