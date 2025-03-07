@@ -18,4 +18,4 @@ jobs:
           echo "The variable is: $REPO_VAR"
         env:
           REPO_SECRET: ${{ secrets.REPO_SECRET }}
-          REPO_VAR: ${{ secrets.REPO_VAR }}
+          REPO_VAR: ${{ env.REPO_VAR }}
