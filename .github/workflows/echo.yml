@@ -13,8 +13,9 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Echo Secret Variable
-        run: echo "The secret is: $REPO_SECRET"
-        run: echo "The variable is: $REPO_VAR"
+        run: |
+          echo "The secret is: $REPO_SECRET"
+          echo "The variable is: $REPO_VAR"
         env:
           REPO_SECRET: ${{ secrets.REPO_SECRET }}
           REPO_VAR: ${{ secrets.REPO_VAR }}
